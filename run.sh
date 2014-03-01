@@ -9,7 +9,7 @@ die(){ echo $2; exit $1; }
 export PATH="${M2_HOME}/bin:${ANT19_HOME}/bin:$PATH"
 export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=128m -ea"
 
-mvn --fail-fast -Dmdep.outputFile=mdep.classpath \
+mvn --offline --fail-fast -Dmdep.outputFile=mdep.classpath \
     dependency:build-classpath \
     clean compile package
 
